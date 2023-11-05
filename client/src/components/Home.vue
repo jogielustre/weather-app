@@ -9,29 +9,21 @@
   <div class="hello">
     <h3>Welcome to weather forecast web application. <br> 
       Please login with your Github user to use the application and view the weather in your city.</h3>
-      <button @click="loginWithGitHub">Login</button>
+      <router-link :to="home">
+        <button>
+          Login
+        </button>
+      </router-link>
   </div>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      name: 'HelloWorld',
-      props: {
-        msg: String
-      }
-    };
-  },
-
-  methods: {
-    loginWithGitHub() {
-      window.location.href = 'http://localhost:3000/auth/github'; // Redirect to your Nest.js OAuth endpoint
-    },
-  },
+  name: 'HelloWorld',
+  props: {
+    msg: String
+  }
 }
-
-
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
